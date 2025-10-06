@@ -11,10 +11,12 @@ import Audit from './pages/Audit';
 import OnboardingGuide from './pages/OnboardingGuide';
 import { useApp } from './context/AppContext';
 
+
 function ProtectedRoute({ children }) {
   const { currentUser } = useApp();
   return currentUser ? <Layout>{children}</Layout> : <Navigate to="/login" replace />;
 }
+
 
 function AppRoutes() {
   return (
